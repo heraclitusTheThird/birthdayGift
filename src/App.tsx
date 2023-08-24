@@ -6,6 +6,7 @@ import SignIn from "./components/SignIn";
 import Conditions from "./components/Conditions";
 import MainPage from "./components/MainPage";
 import VerifyUser from "./components/VerifyUser";
+import VerifyIdentity from "./components/VerifyIdentity";
 
 const theme = createTheme({
   typography: {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/TermsAndConditions" element={<Conditions />} />
           <Route path="/MainPage" element={<MainPage />} />
           <Route path="/VerifyUser" element={<VerifyUser />} />
+          <Route path="/VerifyIdentity" element={<VerifyIdentity />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

@@ -10,6 +10,7 @@ import {
   Typography,
   Container,
   Box,
+  Stack,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Snackbar, SnackbarContent } from "@mui/material";
@@ -89,7 +90,7 @@ const VerifyUser: React.FC = () => {
         );
       } else {
         setShowAlert(undefined);
-        navigate("/TermsAndConditions");
+        navigate("/VerifyIdentity");
       }
     }
   };
@@ -122,7 +123,7 @@ const VerifyUser: React.FC = () => {
           boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
         }}
       >
-        <Typography variant="h4">Please Verify your identity</Typography>
+        <Typography variant="h4">Please verify your identity</Typography>
 
         {questions.map((question, index) => (
           <Card key={index} style={{ marginBottom: "20px", marginTop: "20px" }}>
@@ -172,7 +173,7 @@ const VerifyUser: React.FC = () => {
           }}
           onClick={handleNextPage}
         >
-          Next Page
+          Verify
         </Button>
       </Container>
       <Snackbar
