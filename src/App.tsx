@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SignIn from "./components/SignIn";
+import Conditions from "./components/Conditions";
+import MainPage from "./components/MainPage";
+import VerifyUser from "./components/VerifyUser";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: "Playfair Display, serif",
+  },
+  palette: {
+    primary: {
+      main: "#1976D2",
+    },
+    secondary: {
+      main: "#757575", // Non-primary color
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<SignIn />} />
+          <Route path="/TermsAndConditions" element={<Conditions />} />
+          <Route path="/MainPage" element={<MainPage />} />
+          <Route path="/VerifyUser" element={<VerifyUser />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
