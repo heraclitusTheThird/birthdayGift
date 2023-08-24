@@ -24,7 +24,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
+      <BrowserRouter basename={window.location.pathname || ""}>
         <Routes>
           <Route path="/" element={<SignIn />} />
           <Route path="/TermsAndConditions" element={<Conditions />} />
